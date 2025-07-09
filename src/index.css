@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    background: #0a0a0a;
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, #2E0F59 0%, #C800FF 50%, #00FFE0 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+  }
+  
+  .gradient-bg-static {
+    background: linear-gradient(135deg, #2E0F59 0%, #C800FF 50%, #00FFE0 100%);
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #C800FF, #00FFE0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-glow {
+    box-shadow: 0 0 20px rgba(200, 0, 255, 0.3);
+  }
+  
+  .card-glow:hover {
+    box-shadow: 0 0 30px rgba(200, 0, 255, 0.5);
+  }
+}
